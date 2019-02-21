@@ -1,114 +1,119 @@
-        .splash {
-            text-align: center;
-            margin: 0 auto;
-        }
+.overskrift {
+    font-family: 'Crimson Text', serif
+}
 
-        .menu {
-            text-align: center;
-            flex-wrap: wrap;
-        }
+.splash {
+    text-align: center;
+    margin: 0 auto;
+}
 
-        .menu button {
-            font-size: 1.5vw;
-            font-family: 'Crimson Text', serif;
-            margin: 1.5rem;
+.menu {
+    text-align: center;
+    flex-wrap: wrap;
+}
 
-        }
+.menu button {
+    font-size: 1.5vw;
+    font-family: 'Crimson Text', serif;
+    margin: 1.5rem;
+    border-radius: 25px;
 
-        .menu button:hover {
-            background-color: darkseagreen;
-        }
+}
 
-        .mad {
-            border: 1px black;
-            margin: 10px;
-            padding: 10px;
-            flex-wrap: wrap;
-            box-shadow: 7px 15px 15px 0 rgba(0, 0, 0, 0.4);
-            font-family: 'Crimson Text', serif;
+.menu button:hover {
+    background-color: darkseagreen;
+}
 
-        }
+.mad {
+    border: 1px black;
+    margin: 10px;
+    padding: 10px;
+    flex-wrap: wrap;
+    box-shadow: 7px 15px 15px 0 rgba(0, 0, 0, 0.4);
+    font-family: 'Crimson Text', serif;
 
-        .billede img {
-            max-width: 100%;
+}
 
-        }
+.billede img {
+    max-width: 100%;
 
-        .billede {
-            text-align: center;
-        }
+}
 
-        h2 {
-            text-align: center;
-            font-family: 'Crimson Text', serif;
+.billede {
+    text-align: center;
+}
 
-        }
+h2 {
+    text-align: center;
+    font-family: 'Crimson Text', serif;
 
-        #liste {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
 
-        }
+#liste {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-        h1 {
-            font-family: 'Crimson Text', serif;
-        }
+}
 
-        p {
-            font-family: 'Crimson Text', serif;
-        }
+h1 {
+    font-family: 'Crimson Text', serif;
+}
 
-        .valgt {
-            background-color: darkseagreen;
-        }
+p {
+    font-family: 'Crimson Text', serif;
+}
 
-        #popup {
-            width: 100vw;
-            height: 100vh;
-            position: fixed;
-            display: none;
-        }
+.valgt {
+    background-color: darkseagreen;
+}
 
-        #indhold {
-            box-sizing: border-box;
-            width: 50vw;
-            height: 70vh;
-            margin: auto;
-        }
+#popup {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: none;
+}
 
-        #luk {
-            box-sizing: border-box;
-            text-align: right;
-            margin-right: 24vw;
-            padding-right: 1em;
-            font-family: 'Crimson Text', serif;
+#indhold {
+    box-sizing: border-box;
+    width: 50vw;
+    height: 70vh;
+    margin: auto;
+}
 
-        }
+#luk {
+    box-sizing: border-box;
+    text-align: right;
+    margin-right: 24vw;
+    padding-right: 1em;
+    font-family: 'Crimson Text', serif;
 
-        #luk button {
-            font-size: 2em;
-            box-shadow: 7px 4px 15px 0 rgba(0, 0, 0, 0.4);
-        }
+}
 
-        .tomt {
-            height: 100vh;
-            width: 100vw;
-            background-color: white;
-            opacity: 0.5;
-            position: fixed;
-            top: 0;
-            left: 0;
-            display: none;
-        }
+#luk button {
+    font-size: 2em;
+    box-shadow: 7px 4px 15px 0 rgba(0, 0, 0, 0.4);
+}
 
-        footer {
-            height: 10vw;
-            width: auto;
-            position: static;
-            display: flex;
-        }
+.tomt {
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
 
-        #boks {
-            flex-wrap: wrap;
-            margin: 2vw;
-        }
+footer {
+    height: 10vw;
+    width: auto;
+    position: static;
+    display: flex;
+}
+
+#boks {
+    flex-wrap: wrap;
+    margin: 2vw;
+}
