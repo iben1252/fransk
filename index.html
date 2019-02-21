@@ -4,12 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <title>L'original</title>
 </head>
 
 <body>
     <div class="sphlas">
         <img src="logo/splash.jpg" alt="Splash billede">
+    <div class="splash">
+        <img src="logo/splash_rigtig.jpg" alt="Splash billede">
     </div>
     <div class="tomt"></div>
     <div id="popup">
@@ -19,12 +22,12 @@
     <header>
         <nav>
             <div class="menu">
-                <button class="filter" data-hold="alle">Alle</button>
-                <button class="filter" data-hold="forretter">Forretter</button>
-                <button class="filter" data-hold="hovedretter">Hovedretter</button>
-                <button class="filter" data-hold="desserter">Desserter</button>
-                <button class="filter" data-hold="drikkevarer">Drikkevarer</button>
-                <button class="filter" data-hold="sideorders">Sideorders</button>
+                <button class="filter" data-mad="alle">Alle</button>
+                <button class="filter" data-mad="forretter">Forretter</button>
+                <button class="filter" data-mad="hovedretter">Hovedretter</button>
+                <button class="filter" data-mad="desserter">Desserter</button>
+                <button class="filter" data-mad="drikkevarer">Drikkevarer</button>
+                <button class="kontakt">Kontakt os</button>
             </div>
         </nav>
     </header>
@@ -48,7 +51,7 @@
             let dest = document.querySelector("#liste");
 
             async function getJson() {
-                let jsonData = await fetch("");
+                let jsonData = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1vd5pq7yimNk-kVrjB-zin7dKoU-TkFE2o0LXDZp6L9M");
                 mad = await jsonData.json();
                 mad.sort((a, b) => {
                     return a.navn.localeCompare(b.navn)
@@ -63,13 +66,10 @@
                     if (filter == "alle" || filter == mad.kategori) {
                         let template = `
                         <div class="mad">
-                            <h2>${mad.navn}</h2>
                             <div class="billede">
-                                <img src="mad_small/${mad.billede}-sm.jpg">
+                                <img src="mad/${mad.billede}.jpg" alt="${mad.alt_tekst}">
                             </div>
-                            <p><strong>Kategori:</strong> ${mad.kategori}</p>
-                            <p><strong>Beskrivelse:</strong> ${mad.kort}</p>
-                            <p><strong>Pris:</strong> ${mad.pris},00 DDK</p>
+                            <h2>${mad.navn}</h2>
                         </div>`;
                         dest.insertAdjacentHTML("beforeend", template);
                         dest.lastElementChild.addEventListener("click", åbn);
@@ -79,11 +79,10 @@
                             <div class="mad">
                                 <h2>${mad.navn}</h2>
                                 <div class="billede">
-                                    <img src="mad_small/${mad.billede}-sm.jpg">
+                                    <img src="mad/${mad.billede}.jpg" alt="${mad.alt_tekst}>
                                 </div>
-                                <p><strong>Kategori:</strong> ${mad.kategori}</p>
-                                <p><strong>Oprindelse:</strong>${mad.oprindelse}</p>
-                                <p><strong>Beskrivelse:</strong> ${mad.lang}</p>
+                                <p><strong>Kategori:</strong> ${mad.kateogri}</p>
+                                <p><strong>Beskrivelse:</strong> ${mad.beskrivelse}</p>
                                 <p><strong>Pris:</strong> ${mad.pris},00 DKK</p>
                             </div>
                             `;

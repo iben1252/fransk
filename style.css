@@ -1,22 +1,22 @@
-        .overskrift {
+        .splash {
             text-align: center;
-            padding: 1vw;
-            font-family: fantasy;
+            margin: 0 auto;
         }
 
         .menu {
             text-align: center;
+            flex-wrap: wrap;
         }
 
         .menu button {
             font-size: 1.5vw;
-            font-family: futura, sans-serif;
+            font-family: 'Crimson Text', serif;
             margin: 1.5rem;
 
         }
 
         .menu button:hover {
-            background-color: #ffdaad;
+            background-color: lightgreen;
         }
 
         .mad {
@@ -24,13 +24,14 @@
             margin: 10px;
             padding: 10px;
             flex-wrap: wrap;
-            background-color: #ffdaad;
             box-shadow: 7px 15px 15px 0 rgba(0, 0, 0, 0.4);
-            font-family: helvetica, sans-serif;
+            font-family: 'Crimson Text', serif;
+
         }
 
         .billede img {
             max-width: 100%;
+
         }
 
         .billede {
@@ -39,20 +40,22 @@
 
         h2 {
             text-align: center;
-            font-family: fantasy;
+            font-family: 'Crimson Text', serif;
+
         }
 
         #liste {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
         }
 
         h1 {
-            font-family: fantasy;
+            font-family: 'Crimson Text', serif;
         }
 
         p {
-            font-family: futura, sans-serif;
+            font-family: 'Crimson Text', serif;
         }
 
         .valgt {
@@ -78,7 +81,8 @@
             text-align: right;
             margin-right: 24vw;
             padding-right: 1em;
-            font-family: futura, sans-serif;
+            font-family: 'Crimson Text', serif;
+
         }
 
         #luk button {
