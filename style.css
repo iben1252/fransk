@@ -1,0 +1,110 @@
+        .overskrift {
+            text-align: center;
+            padding: 1vw;
+            font-family: fantasy;
+        }
+
+        .menu {
+            text-align: center;
+        }
+
+        .menu button {
+            font-size: 1.5vw;
+            font-family: futura, sans-serif;
+            margin: 1.5rem;
+
+        }
+
+        .menu button:hover {
+            background-color: #ffdaad;
+        }
+
+        .mad {
+            border: 1px black;
+            margin: 10px;
+            padding: 10px;
+            flex-wrap: wrap;
+            background-color: #ffdaad;
+            box-shadow: 7px 15px 15px 0 rgba(0, 0, 0, 0.4);
+            font-family: helvetica, sans-serif;
+        }
+
+        .billede img {
+            max-width: 100%;
+        }
+
+        .billede {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: fantasy;
+        }
+
+        #liste {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        h1 {
+            font-family: fantasy;
+        }
+
+        p {
+            font-family: futura, sans-serif;
+        }
+
+        .valgt {
+            background-color: #ffdaad;
+        }
+
+        #popup {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            display: none;
+        }
+
+        #indhold {
+            box-sizing: border-box;
+            width: 50vw;
+            height: 70vh;
+            margin: auto;
+        }
+
+        #luk {
+            box-sizing: border-box;
+            text-align: right;
+            margin-right: 24vw;
+            padding-right: 1em;
+            font-family: futura, sans-serif;
+        }
+
+        #luk button {
+            font-size: 2em;
+            box-shadow: 7px 4px 15px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        .tomt {
+            height: 100vh;
+            width: 100vw;
+            background-color: white;
+            opacity: 0.5;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        footer {
+            height: 10vw;
+            width: auto;
+            position: static;
+            display: flex;
+        }
+
+        #boks {
+            flex-wrap: wrap;
+            margin: 2vw;
+        }
