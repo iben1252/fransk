@@ -9,16 +9,10 @@
 </head>
 
 <body>
-    <div class="sphlas">
-        <img src="logo/splash.jpg" alt="Splash billede">
     <div class="splash">
         <img src="logo/splash_rigtig.jpg" alt="Splash billede">
     </div>
-    <div class="tomt"></div>
-    <div id="popup">
-        <div id="luk"><button>X</button></div>
-        <div id="indhold"></div>
-    </div>
+
     <header>
         <nav>
             <div class="menu">
@@ -26,14 +20,20 @@
                 <button class="filter" data-mad="forretter">Forretter</button>
                 <button class="filter" data-mad="hovedretter">Hovedretter</button>
                 <button class="filter" data-mad="desserter">Desserter</button>
-                <button class="filter" data-mad="drikkevarer">Drikkevarer</button>
+                <button class="filter" data-mad="drikkevare">Drikkevare</button>
                 <button class="kontakt">Kontakt os</button>
             </div>
         </nav>
     </header>
 
+    <div class="tomt"></div>
+    <div id="popup">
+        <div id="luk"><button>X</button></div>
+        <div id="indhold"></div>
+    </div>
+
     <main>
-        <div class="mini_overskrift">
+        <div class="minoverskrift">
             <h2></h2>
         </div>
         <div id="liste"></div>
@@ -63,7 +63,7 @@
             function visMad() {
                 dest.innerHTML = "";
                 mad.forEach((mad) => {
-                    if (filter == "alle" || filter == mad.kategori) {
+                    if (filter == "alle" || filter == mad.kateogri) {
                         let template = `
                         <div class="mad">
                             <div class="billede">
@@ -105,7 +105,7 @@
             })
 
             function filtrering() {
-                filter = this.getAttribute("data-hold");
+                filter = this.getAttribute("data-mad");
                 document.querySelector("h2").textContent = this.textContent;
                 document.querySelectorAll(".filter").forEach(elm => {
                     elm.classList.remove("valgt");
