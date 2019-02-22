@@ -99,14 +99,13 @@
                             <div class="mad">
                                 <h2>${alleMad.navn}</h2>
                                 <div class="billede">
-                                    <img src="mad_small/${alleMad.billede}.jpg">
+                                    <img src="mad/${alleMad.billede}.jpg">
                                 </div>
-                                <p><strong>Kategori:</strong> ${alleMad.kategori}</p>
-                                <p><strong>Oprindelse:</strong>${alleMad.oprindelse}</p>
-                                <p><strong>Beskrivelse:</strong> ${alleMad.lang}</p>
+                                <p><strong>Kategori:</strong> ${alleMad.kateogri}</p>
+                                <p><strong>Beskrivelse:</strong> ${alleMad.beskrivelse}</p>
                                 <p><strong>Pris:</strong> ${alleMad.pris},00 DKK</p>
                             </div>`;
-                            document.querySelector("popup").style.display = "block";
+                            document.querySelector("#popup").style.display = "block";
 
                             document.querySelector(".tomt").style.display = "block";
                         }

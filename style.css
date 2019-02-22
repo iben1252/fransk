@@ -72,7 +72,7 @@ h2 {
 
 h1 {
     font-family: 'Crimson Text', serif;
-    text-align: center;
+
 }
 
 p {
@@ -86,8 +86,9 @@ p {
 #popup {
     width: 100vw;
     height: 100vh;
-    position: fixed;
+    position: sticky;
     display: none;
+    background-color: white;
 }
 
 
