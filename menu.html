@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <title>L'original</title>
+</head>
+
+<body>
+
+    <picture>
+        <source media="(min-width: 1024px)" srcset="logo/splash_rigtig.jpg">
+        <source media="(min-width: 667px)" srcset="logo/splash_rigtig.jpg">
+        <source media="(max-width: 667px)" srcset="splash_billede/splash_mobil.jpg">
+        <img src="logo/splash_rigtig.jpg" alt="splash" style="width: auto">
+    </picture>
+
+
+    <header>
+        <nav>
+            <div class="menu">
+                <a href="index.html"><button class="kontakt">Forside</button></a>
+                <button class="filter" data-mad="alle">Hele menu'en</button>
+                <button class="filter" data-mad="forretter">Forretter</button>
+                <button class="filter" data-mad="hovedretter">Hovedretter</button>
+                <button class="filter" data-mad="desserter">Desserter</button>
+                <button class="filter" data-mad="drikkevare">Drikkevare</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="tomt"></div>
+    <div id="popup">
+        <div id="luk"><button>X</button></div>
+        <div id="indhold"></div>
+    </div>
+
+    <main>
+        <div class="overskrift">
+            <h2></h2>
+        </div>
+        <div id="liste"></div>
+
+    </main>
+
+    <script>
+        let mad = [];
+        let filter = "alle";
+
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            let dest = document.querySelector("#liste");
+
+            async function getJson() {
+                let jsonData = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1vd5pq7yimNk-kVrjB-zin7dKoU-TkFE2o0LXDZp6L9M");
+                mad = await jsonData.json();
+                mad.sort((a, b) => {
+                    return a.navn.localeCompare(b.navn)
+                });
+                visMad();
+            }
+
+
+            function visMad() {
+                dest.innerHTML = "";
+                mad.forEach((menu) => {
+                    if (filter == "alle" || filter == menu.kateogri) {
+                        let template = `
+                        <div class="mad">
+                            <div class="billede">
+                                <img src="mad/${menu.billede}.jpg" alt="${menu.alt_tekst}">
+                            </div>
+                            <h2>${menu.navn}</h2>
+                        </div>`;
+                        dest.insertAdjacentHTML("beforeend", template);
+                        dest.lastElementChild.addEventListener("click", åbn);
+
+                        function åbn() {
+                            document.querySelector("#indhold").innerHTML = `
+                            <div class="mad">
+                                <h2>${menu.navn}</h2>
+                                <div class="billede">
+                                    <img src="mad/${menu.billede}.jpg" alt="${menu.alt_tekst}>
+                                </div>
+                                <p><strong>Kategori:</strong> ${menu.kateogri}</p>
+                                <p><strong>Beskrivelse:</strong> ${menu.beskrivelse}</p>
+                                <p><strong>Pris:</strong> ${menu.pris},00 DKK</p>
+                            </div>
+                            `;
+                            document.querySelector("#popup").style.display = "block";
+                            document.querySelector(".tomt").style.display = "block";
+
+                        }
+                    }
+                })
+            }
+
+            document.querySelector("#luk button").addEventListener("click", () => {
+                document.querySelector("#popup").style.display = "none";
+                document.querySelector(".tomt").style.display = "none";
+            })
+
+
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            })
+
+            function filtrering() {
+                filter = this.getAttribute("data-mad");
+                document.querySelector("h2").textContent = this.textContent;
+                document.querySelectorAll(".filter").forEach(elm => {
+                    elm.classList.remove("valgt");
+                })
+                this.classList.add("valgt");
+                visMad();
+            }
+
+            getJson();
+        }
+    </script>
+
+</body>
+
+
+
+
+
+</html>
