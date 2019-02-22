@@ -3,16 +3,24 @@
 }
 
 
-picture img {
+picture img,
+#om picture img {
     max-width: 100%;
 }
+
 
 @media only screen and (min-width: 1024px) {
 
     picture img {
         margin-left: 120px;
     }
+
+    #om picture img {
+        margin-left: 0;
+        left: 0px;
+    }
 }
+
 
 .menu {
     text-align: center;
@@ -64,6 +72,7 @@ h2 {
 
 h1 {
     font-family: 'Crimson Text', serif;
+    text-align: center;
 }
 
 p {
@@ -80,6 +89,7 @@ p {
     position: fixed;
     display: none;
 }
+
 
 #indhold {
     box-sizing: border-box;
@@ -102,16 +112,16 @@ p {
     box-shadow: 7px 4px 15px 0 rgba(0, 0, 0, 0.4);
 }
 
-.tomt {
+.tomt {
     height: 100vh;
     width: 100vw;
     background-color: white;
-    opacity: 0.5;
-    position: fixed;
+    opacity: fixed;
     top: 0;
     left: 0;
     display: none;
 }
+
 
 footer {
     height: 10vw;
@@ -132,12 +142,10 @@ footer {
 
 
 /* Forside */
-#om{
-
-}
 .sectionwrapper {
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
 }
 
 .column {
@@ -147,4 +155,3 @@ footer {
     border: 1px solid none;
     padding: 10px;
 }
-

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,6 +46,20 @@
 
     </main>
 
+    <footer>
+        <div id="boks">
+            <p><em>ADRESSE:</em></p>
+            <P>Prins Henriksgade 83<br>
+                2200 København N</P>
+        </div>
+        <div id="boks">
+            <p><em>Åbningstider</em></p>
+            <p>Mandag - Torsdag: 11:00 - 22:00<br>
+                Fredag - Lørdag: 12:00 - 01:00<br>
+                Søndag: 12:00 - 22:00</p>
+        </div>
+    </footer>
+
     <script>
         let mad = [];
         let filter = "alle";
@@ -67,14 +82,14 @@
 
             function visMad() {
                 dest.innerHTML = "";
-                mad.forEach((menu) => {
-                    if (filter == "alle" || filter == menu.kateogri) {
+                mad.forEach((alleMad) => {
+                    if (filter == "alle" || filter == alleMad.kateogri) {
                         let template = `
                         <div class="mad">
                             <div class="billede">
-                                <img src="mad/${menu.billede}.jpg" alt="${menu.alt_tekst}">
+                                <img src="mad/${alleMad.billede}.jpg" alt="${alleMad.alt_tekst}">
                             </div>
-                            <h2>${menu.navn}</h2>
+                            <h2>${alleMad.navn}</h2>
                         </div>`;
                         dest.insertAdjacentHTML("beforeend", template);
                         dest.lastElementChild.addEventListener("click", åbn);
@@ -82,20 +97,22 @@
                         function åbn() {
                             document.querySelector("#indhold").innerHTML = `
                             <div class="mad">
-                                <h2>${menu.navn}</h2>
+                                <h2>${alleMad.navn}</h2>
                                 <div class="billede">
-                                    <img src="mad/${menu.billede}.jpg" alt="${menu.alt_tekst}>
+                                    <img src="mad_small/${alleMad.billede}.jpg">
                                 </div>
-                                <p><strong>Kategori:</strong> ${menu.kateogri}</p>
-                                <p><strong>Beskrivelse:</strong> ${menu.beskrivelse}</p>
-                                <p><strong>Pris:</strong> ${menu.pris},00 DKK</p>
-                            </div>
-                            `;
-                            document.querySelector("#popup").style.display = "block";
-                            document.querySelector(".tomt").style.display = "block";
+                                <p><strong>Kategori:</strong> ${alleMad.kategori}</p>
+                                <p><strong>Oprindelse:</strong>${alleMad.oprindelse}</p>
+                                <p><strong>Beskrivelse:</strong> ${alleMad.lang}</p>
+                                <p><strong>Pris:</strong> ${alleMad.pris},00 DKK</p>
+                            </div>`;
+                            document.querySelector("popup").style.display = "block";
 
+                            document.querySelector(".tomt").style.display = "block";
                         }
+
                     }
+
                 })
             }
 
@@ -121,23 +138,12 @@
 
             getJson();
         }
+
     </script>
 
 </body>
 
-<footer>
-    <div id="boks">
-        <p><em>ADRESSE:</em></p>
-        <P>Prins Henriksgade 83<br>
-            2200 København N</P>
-    </div>
-    <div id="boks">
-        <p><em>Åbningstider</em></p>
-        <p>Mandag - Torsdag: 11:00 - 22:00<br>
-            Fredag - Lørdag: 12:00 - 01:00<br>
-            Søndag: 12:00 - 22:00</p>
-    </div>
-</footer>
+
 
 
 
