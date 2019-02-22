@@ -11,12 +11,18 @@
 
 <body>
 
+    <div id="popup">
+        <div id="luk"><button>X</button></div>
+        <div id="indhold"></div>
+    </div>
+
     <picture>
         <source media="(min-width: 1024px)" srcset="logo/splash_rigtig.jpg">
         <source media="(min-width: 667px)" srcset="logo/splash_rigtig.jpg">
         <source media="(max-width: 667px)" srcset="splash_billede/splash_mobil.jpg">
         <img src="logo/splash_rigtig.jpg" alt="splash" style="width: auto">
     </picture>
+
 
 
     <header>
@@ -32,11 +38,10 @@
         </nav>
     </header>
 
+
+
     <div class="tomt"></div>
-    <div id="popup">
-        <div id="luk"><button>X</button></div>
-        <div id="indhold"></div>
-    </div>
+
 
     <main>
         <div class="overskrift">
@@ -137,7 +142,6 @@
 
             getJson();
         }
-
     </script>
 
 </body>
