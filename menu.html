@@ -29,7 +29,7 @@
         <nav>
             <div class="menu">
                 <a href="index.html"><button class="kontakt">Forside</button></a>
-                <button class="filter" data-mad="alle">Hele menu'en</button>
+                <button class="filter" data-mad="alle">Menukort</button>
                 <button class="filter" data-mad="forretter">Forretter</button>
                 <button class="filter" data-mad="hovedretter">Hovedretter</button>
                 <button class="filter" data-mad="desserter">Desserter</button>
@@ -100,6 +100,7 @@
                         dest.lastElementChild.addEventListener("click", åbn);
 
                         function åbn() {
+                            console.log("åbn kører");
                             document.querySelector("#indhold").innerHTML = `
                             <div class="mad">
                                 <h2>${alleMad.navn}</h2>
@@ -113,6 +114,7 @@
                             document.querySelector("#popup").style.display = "block";
 
                             document.querySelector(".tomt").style.display = "block";
+
                         }
 
                     }
