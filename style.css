@@ -17,8 +17,15 @@ picture img,
 
 @media only screen and (min-width: 1024px) {
 
+
+    header,
+    main{
+        width: 1024px;
+        margin: 0 auto;
+    }
+
     picture img {
-        margin-left: 120px;
+        /* margin-left: 120px;*/
     }
 
     #om picture img {
