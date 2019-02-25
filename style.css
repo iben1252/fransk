@@ -15,43 +15,6 @@ picture img,
 }
 
 
-@media only screen and (min-width: 1024px) {
-
-
-    header,
-    main {
-        width: 1024px;
-        margin: 0 auto;
-    }
-
-    #om picture img {
-        margin-left: 0;
-        left: 0px;
-    }
-}
-
-
-@media only screen and (max-width: 1024px) {
-    .menu button {
-        font-size: 2vw;
-        margin: 0.5vw;
-        border-radius: 25px;
-        height: 6.5vw;
-        width: 12.5vw;
-    }
-}
-
-@media only screen and (max-width: 419px) {
-    .menu button {
-        display: block;
-        width: auto;
-        border-radius: 25px;
-        margin: 0.5vw;
-        height: 6.5vw;
-    }
-
-}
-
 .menu {
     text-align: center;
     flex-wrap: wrap;
@@ -159,10 +122,10 @@ p {
 
 footer {
     height: 10vw;
-    width: auto;
+    width: 100%;
     position: static;
     display: flex;
-    margin-left: 500px;
+    justify-content: center;
     text-align: center;
     margin-bottom: 30px;
 
@@ -188,4 +151,53 @@ footer {
     margin: 10px;
     border: 1px solid none;
     padding: 10px;
+}
+
+
+
+
+
+
+@media only screen and (min-width: 1024px) {
+
+
+    header,
+    main {
+        width: 1024px;
+        margin: 0 auto;
+    }
+
+    #om picture img {
+        margin-left: 0;
+        left: 0px;
+    }
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+    .menu button {
+        font-size: 2vw;
+        margin: 0.5vw;
+        height: 6.5vw;
+        width: 12.5vw;
+    }
+}
+
+@media only screen and (max-width: 419px) {
+    .menu button {
+        border-radius: 25px;
+        font-size: 4vw;
+        margin: 0.5vw;
+        height: 6.5vw;
+        width: 25vw;
+        margin-bottom: 1.5vw;
+    }
+
+}
+
+@media only screen and (max-width: 375px) {
+    footer {
+        display: block;
+    }
 }
