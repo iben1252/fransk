@@ -35,9 +35,6 @@
         </nav>
     </header>
 
-    <div class="tomt"></div>
-
-
     <main>
         <div class="overskrift">
             <h2></h2>
@@ -48,12 +45,12 @@
 
     <footer>
         <div id="boks">
-            <p><em>ADRESSE:</em></p>
+            <p><em>Adresse:</em></p>
             <P>Prins Henriksgade 83<br>
                 2200 København N</P>
         </div>
         <div id="boks">
-            <p><em>Åbningstider</em></p>
+            <p><em>Åbningstider:</em></p>
             <p>Mandag - Torsdag: 11:00 - 22:00<br>
                 Fredag - Lørdag: 12:00 - 01:00<br>
                 Søndag: 12:00 - 22:00</p>
@@ -108,8 +105,6 @@
                             </div>`;
                             document.querySelector("#popup").style.display = "block";
 
-                            document.querySelector(".tomt").style.display = "block";
-
                         }
 
                     }
@@ -119,7 +114,6 @@
 
             document.querySelector("#luk button").addEventListener("click", () => {
                 document.querySelector("#popup").style.display = "none";
-                document.querySelector(".tomt").style.display = "none";
             })
 
 
